@@ -43,6 +43,7 @@ pub struct Server<F> {
 ///
 /// *This type requires the `"tls"` feature.*
 #[cfg(feature = "tls")]
+#[cfg_attr(docsrs, doc(cfg(feature = "tls")))]
 pub struct TlsServer<F> {
     server: Server<F>,
     tls: TlsConfigBuilder,
@@ -396,6 +397,7 @@ where
     ///
     /// *This function requires the `"tls"` feature.*
     #[cfg(feature = "tls")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "tls")))]
     pub fn tls(self) -> TlsServer<F> {
         TlsServer {
             server: self,
@@ -407,6 +409,7 @@ where
 // // ===== impl TlsServer =====
 
 #[cfg(feature = "tls")]
+#[cfg_attr(docsrs, doc(cfg(feature = "tls")))]
 impl<F> TlsServer<F>
 where
     F: Filter + Clone + Send + Sync + 'static,

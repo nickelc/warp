@@ -15,6 +15,7 @@ edition = "2018"
 
 [package.metadata.docs.rs]
 all-features = true
+rustdoc-args = ["--cfg", "docsrs"]
 
 [dependencies]
 async-compression = { version = "0.3.1", features = ["brotli", "deflate", "gzip", "stream"], optional = true }
